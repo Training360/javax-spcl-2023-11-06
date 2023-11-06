@@ -50,7 +50,7 @@ public class CourseController {
         var command = new EnrollCommand(courseId, resource.getEmployeeIds());
         var view = courseService.enroll(command);
         return ResponseEntity.created(builder.path("/api/courses/{id}/enrollments").buildAndExpand(courseId).toUri())
-                .body(courseMapper.toView((view));
+                .body(courseMapper.toResource(view));
     }
 
 
