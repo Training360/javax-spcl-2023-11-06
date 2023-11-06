@@ -2,8 +2,12 @@ package courseservice.course.dto;
 
 import lombok.Data;
 
+import java.util.List;
+
 @Data
-public class CreateCourseCommand {
+public class CourseResource {
+
+    private Long id;
 
     private String name;
 
@@ -13,4 +17,7 @@ public class CreateCourseCommand {
 
     private int limit;
 
+    List<Long> enrolledEmployees;
+
+    List<Long> completedEmployees;
 }

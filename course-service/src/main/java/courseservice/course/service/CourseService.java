@@ -1,8 +1,8 @@
 package courseservice.course.service;
 
 import courseservice.course.dto.CourseDetailsView;
-import courseservice.course.dto.CourseView;
-import courseservice.course.dto.CreateCourseCommand;
+import courseservice.course.dto.AnnounceCourseCommand;
+import courseservice.course.model.Course;
 import lombok.AllArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
@@ -18,16 +18,21 @@ public class CourseService {
 
     private CourseMapper courseMapper;
 
-    public CourseView createCourse(CreateCourseCommand command) {
-        return null;
+    public CourseDetailsView announceCourse(AnnounceCourseCommand command) {
+        var course = Course.announceCourse(command);
+        courseRepository.save(course);
+        return courseMapper.toView(course);
     }
 
     public CourseDetailsView findCourseById(long id) {
-        return null;
+        var course = courseRepository.findById(id)
+                .orElseThrow(() -> new IllegalArgumentException("Course not found with id: %s".formatted(id)));
+        return courseMapper.toView(course);
     }
 
-    public List<CourseView> findAllCourses() {
-        return null;
+    public List<CourseDetailsView> findAllCourses() {
+        var courses = courseRepository.findAll();
+        return courseMapper.toViews(courses);
     }
 
 }
