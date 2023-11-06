@@ -1,5 +1,6 @@
 package frontendservice.service;
 
+import frontendservice.employeegateway.CreateEmployeeRequest;
 import frontendservice.employeegateway.EmployeeDto;
 import frontendservice.employeegateway.EmployeesClient;
 import frontendservice.employeegateway.RoleDto;
@@ -26,7 +27,8 @@ public class EmployeesService {
         return employeesClient.roles();
     }
 
-//    public void createEmployee(CreateEmployeeCommand command) {
-//    }
+    public void createEmployee(CreateEmployeeRequest command) {
+        employeesClient.createEmployee(command);
+    }
 
 }

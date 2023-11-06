@@ -2,7 +2,7 @@ POST http://localhost:8081/api/roles
 Content-Type: application/json
 
 {
-  "name": "Junior Java Developer"
+  "name": "Senior Java Developer"
 }
 
 ###
