@@ -1,6 +1,8 @@
 package courseservice.course.controller;
 
 import courseservice.course.dto.CourseResource;
+import courseservice.course.dto.EnrollCommand;
+import courseservice.course.dto.EnrolledEmployeesResource;
 import courseservice.course.service.CourseMapper;
 import courseservice.course.service.CourseService;
 import lombok.AllArgsConstructor;
@@ -41,6 +43,14 @@ public class CourseController {
 
         return ResponseEntity.created(builder.path("/api/courses/{id}").buildAndExpand(result.getId()).toUri())
                 .body(result);
+    }
+
+    @PostMapping("/{courseId}/enrollments")
+    public ResponseEntity<EnrolledEmployeesResource> enroll(@PathVariable long courseId, @RequestBody EnrolledEmployeesResource resource, UriComponentsBuilder builder) {
+        var command = new EnrollCommand(courseId, resource.getEmployeeIds());
+        var view = courseService.enroll(command);
+        return ResponseEntity.created(builder.path("/api/courses/{id}/enrollments").buildAndExpand(courseId).toUri())
+                .body(courseMapper.toView((view));
     }
 
 

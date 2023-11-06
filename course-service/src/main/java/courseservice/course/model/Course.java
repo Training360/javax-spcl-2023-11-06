@@ -1,6 +1,7 @@
 package courseservice.course.model;
 
 import courseservice.course.dto.AnnounceCourseCommand;
+import courseservice.course.dto.EnrollCommand;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
@@ -44,5 +45,14 @@ public class Course {
         course.setSyllabus(command.getSyllabus());
         course.setLimit(command.getLimit());
         return course;
+    }
+
+    public void enroll(EnrollCommand command) {
+        for (var employeeId: command.getEmployeeIds()) {
+            boolean found = enrolledEmployees.contains(employeeId);
+            if (!found && enrolledEmployees.size() < limit) {
+                enrolledEmployees.add(employeeId);
+            }
+        }
     }
 }
