@@ -4,7 +4,7 @@
 
 ![Architektúra](architektura-abra.png)
 
-## Employees megnyitása
+## Employees megnyitása, futtatása
 
 ```shell
 git clone https://github.com/Training360/javax-spcl-2023-11-06
@@ -17,3 +17,9 @@ docker run -d -e POSTGRES_DB=employees -e POSTGRES_USER=employees -e POSTGRES_PA
 ```
 
 Swagger: [http://localhost:8081/swagger-ui.html](http://localhost:8081/swagger-ui.html)
+
+## Course service megnyitása, futtatása
+
+```shell
+docker run -d -e POSTGRES_DB=course -e POSTGRES_USER=course -e POSTGRES_PASSWORD=course -p 5434:5432  --name course-postgres postgres
+```
