@@ -27,7 +27,7 @@ public class CourseResource {
         this.limit = limit;
     }
 
-    List<Long> enrolledEmployees;
+    private List<Long> enrolledEmployees;
 
-    List<Long> completedEmployees;
+    private List<Long> completedEmployees;
 }

@@ -26,11 +26,11 @@ public class CoursesController {
         var model = Map.of("courses", courses);
         return new ModelAndView("courses", model);
     }
-//
-//    @GetMapping("/course")
-//    public ModelAndView findCourseById(@RequestParam long courseId) {
-//        var course = coursesService.findCourseById(courseId);
-//        var model = Map.of("course", course);
-//        return new ModelAndView("course", model);
-//    }
+
+    @GetMapping("/course")
+    public ModelAndView findCourseById(@RequestParam long courseId) {
+        var course = coursesService.findCourseById(courseId);
+        var model = Map.of("course", course);
+        return new ModelAndView("course", model);
+    }
 }
