@@ -4,6 +4,7 @@ import courseservice.course.dto.CourseResource;
 import courseservice.course.dto.EnrollCommand;
 import courseservice.course.dto.EnrolledEmployeesResource;
 import courseservice.course.service.CourseMapper;
+import courseservice.course.service.CourseQueryService;
 import courseservice.course.service.CourseService;
 import lombok.AllArgsConstructor;
 import org.springframework.http.HttpStatus;
@@ -20,12 +21,15 @@ public class CourseController {
 
     private CourseService courseService;
 
+    private CourseQueryService courseQueryService;
+
     private CourseMapper courseMapper;
 
     @GetMapping
     public List<CourseResource> findAllCourses() {
-        return courseMapper.toResources(
-                courseService.findAllCourses());
+//        return courseMapper.toResources(
+//                courseService.findAllCourses());
+        return courseQueryService.findCourseResources();
     }
 
     @GetMapping("/{id}")

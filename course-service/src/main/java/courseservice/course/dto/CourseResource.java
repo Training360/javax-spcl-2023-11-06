@@ -1,10 +1,12 @@
 package courseservice.course.dto;
 
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 import java.util.List;
 
 @Data
+@NoArgsConstructor
 public class CourseResource {
 
     private Long id;
@@ -16,6 +18,14 @@ public class CourseResource {
     private String syllabus;
 
     private int limit;
+
+    public CourseResource(Long id, String name, String description, String syllabus, int limit) {
+        this.id = id;
+        this.name = name;
+        this.description = description;
+        this.syllabus = syllabus;
+        this.limit = limit;
+    }
 
     List<Long> enrolledEmployees;
 
