@@ -20,17 +20,17 @@ public class CoursesController {
     private CoursesService coursesService;
 
 
-    @GetMapping("/courses")
-    public ModelAndView findAllCourses() {
-        var courses = coursesService.findAllCourses();
-        var model = Map.of("courses", courses);
-        return new ModelAndView("courses", model);
-    }
-
-    @GetMapping("/course")
-    public ModelAndView findCourseById(@RequestParam long courseId) {
-        var course = coursesService.findCourseById(courseId);
-        var model = Map.of("course", course);
-        return new ModelAndView("course", model);
-    }
+//    @GetMapping("/courses")
+//    public ModelAndView findAllCourses() {
+//        var courses = coursesService.findAllCourses();
+//        var model = Map.of("courses", courses);
+//        return new ModelAndView("courses", model);
+//    }
+//
+//    @GetMapping("/course")
+//    public ModelAndView findCourseById(@RequestParam long courseId) {
+//        var course = coursesService.findCourseById(courseId);
+//        var model = Map.of("course", course);
+//        return new ModelAndView("course", model);
+//    }
 }

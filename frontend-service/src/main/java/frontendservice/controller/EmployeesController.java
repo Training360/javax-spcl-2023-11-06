@@ -25,20 +25,20 @@ public class EmployeesController {
         return new ModelAndView("employees", model);
     }
 
-    @GetMapping("/create-employee")
-    public ModelAndView createEmployee(Principal principal) {
-        log.info("Logged in user: {}", principal.getName());
-        var model = Map.of(
-                "command", new CreateEmployeeCommand(),
-                "roles", employeesService.listRoles()
-        );
-        return new ModelAndView("create-employee", model);
-    }
-
-    @PostMapping("/create-employee")
-    public ModelAndView createEmployeePost(@ModelAttribute CreateEmployeeCommand command) {
-        employeesService.createEmployee(command);
-        return new ModelAndView("redirect:/employees");
-    }
+//    @GetMapping("/create-employee")
+//    public ModelAndView createEmployee(Principal principal) {
+//        log.info("Logged in user: {}", principal.getName());
+//        var model = Map.of(
+//                "command", new CreateEmployeeCommand(),
+//                "roles", employeesService.listRoles()
+//        );
+//        return new ModelAndView("create-employee", model);
+//    }
+//
+//    @PostMapping("/create-employee")
+//    public ModelAndView createEmployeePost(@ModelAttribute CreateEmployeeCommand command) {
+//        employeesService.createEmployee(command);
+//        return new ModelAndView("redirect:/employees");
+//    }
 
 }
