@@ -8,8 +8,19 @@ POST http://localhost:8083/api/courses
 Content-Type: application/json
 
 {
-  "name": "Spring Framework",
+  "name": "Spring Framework Event Handling",
   "limit": 5
+
+}
+
+###
+POST http://localhost:8083/api/courses
+Content-Type: application/json
+
+{
+  "name": "Spring Cloud",
+  "limit": 5,
+  "description": "A képzés célja a fontosabb Spring Cloud projektek bemutatása. Minden projekthez több gyakorlati feladat is tartozik. A tanfolyam csak érintőlegesen foglalkozik architektúrális kérdésekkel, microservice architektúrával, tervezési döntésekkel. A Microservice tervezési minták Spring Clouddal megvalósítva Kubernetes környezetben (JAVAX-SPCL) tanfolyam, mely ezeket a kérdéseket járja körbe egy konkrét microservice alkalmazás megvalósításával."
 
 }
 
@@ -20,3 +31,6 @@ Content-Type: application/json
 {
   "employeeIds": [4, 5, 6]
 }
+
+###
+GET http://localhost:8083/api/course-documents?word=Kubernetes

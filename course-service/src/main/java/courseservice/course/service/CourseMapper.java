@@ -2,6 +2,7 @@ package courseservice.course.service;
 
 import courseservice.course.dto.*;
 import courseservice.course.model.Course;
+import courseservice.events.CourseHasAnnouncedEvent;
 import org.mapstruct.Mapper;
 
 import java.util.List;
@@ -20,4 +21,6 @@ public interface CourseMapper {
     List<CourseResource> toResources(List<CourseDetailsView> allCourses);
 
     EnrolledEmployeesResource toResource(EnrolledEmployeesView view);
+
+    CourseHasAnnouncedEvent toEvent(Course course);
 }

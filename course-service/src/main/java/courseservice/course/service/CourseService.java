@@ -8,6 +8,7 @@ import courseservice.course.model.Course;
 import jakarta.transaction.Transactional;
 import lombok.AllArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.context.ApplicationEventPublisher;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -21,9 +22,14 @@ public class CourseService {
 
     private CourseMapper courseMapper;
 
+    private ApplicationEventPublisher publisher;
+
     public CourseDetailsView announceCourse(AnnounceCourseCommand command) {
         var course = Course.announceCourse(command);
         courseRepository.save(course);
+
+        publisher.publishEvent(courseMapper.toEvent(course));
+
         return courseMapper.toView(course);
     }
 
