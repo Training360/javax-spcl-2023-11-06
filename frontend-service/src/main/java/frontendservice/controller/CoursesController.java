@@ -20,12 +20,12 @@ public class CoursesController {
     private CoursesService coursesService;
 
 
-//    @GetMapping("/courses")
-//    public ModelAndView findAllCourses() {
-//        var courses = coursesService.findAllCourses();
-//        var model = Map.of("courses", courses);
-//        return new ModelAndView("courses", model);
-//    }
+    @GetMapping("/courses")
+    public ModelAndView findAllCourses() {
+        var courses = coursesService.findAllCourses();
+        var model = Map.of("courses", courses);
+        return new ModelAndView("courses", model);
+    }
 //
 //    @GetMapping("/course")
 //    public ModelAndView findCourseById(@RequestParam long courseId) {
