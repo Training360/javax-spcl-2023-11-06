@@ -1,0 +1,1 @@
+# Microservice tervezési minták Spring Clouddal megvalósítva Kubernetes környezetben 
