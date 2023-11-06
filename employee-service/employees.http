@@ -1,0 +1,21 @@
+POST http://localhost:8081/api/roles
+Content-Type: application/json
+
+{
+  "name": "Junior Java Developer"
+}
+
+###
+
+GET http://localhost:8081/api/employees
+
+###
+
+POST http://localhost:8081/api/employees
+Content-Type: application/json
+
+{
+  "name": "John Doe",
+  "roleId": 1
+}
+
