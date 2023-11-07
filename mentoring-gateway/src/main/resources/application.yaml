@@ -10,6 +10,10 @@ spring:
             - Path=/api/employees/**
           filters:
             - AddRequestHeader=X-Request-Color, blue
+            - name: CircuitBreaker
+              args:
+                  name: myCircuitBreaker
+                  fallbackUri: forward:/api/dummy-employees
         - id: roles
           uri: http://localhost:8081
           predicates:
