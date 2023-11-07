@@ -1,0 +1,7 @@
+GRAPHQL http://localhost:8088/graphql
+
+    query {
+courses {
+id
+    }
+}
