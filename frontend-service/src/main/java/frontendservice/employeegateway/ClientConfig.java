@@ -11,7 +11,7 @@ public class ClientConfig {
 
     @Bean
     public EmployeesClient employeesClient(WebClient.Builder builder) {
-        var client = builder.baseUrl("http://localhost:8081").build();
+        var client = builder.baseUrl("http://localhost:8085").build();
         var factory = HttpServiceProxyFactory.builder(WebClientAdapter.forClient(client)).build();
         return factory.createClient(EmployeesClient.class);
     }

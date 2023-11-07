@@ -1,1 +1,18 @@
 GET http://localhost:8085/api/employees
+
+###
+POST http://localhost:8085/api/employees
+Content-Type: application/json
+
+{
+  "name": "John Doe",
+  "roleId": 1
+}
+
+###
+
+GET http://localhost:8085/api/roles
+
+###
+
+GET http://localhost:8085/api/courses

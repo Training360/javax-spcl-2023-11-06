@@ -11,7 +11,7 @@ public class CoursesClientConfig {
 
     @Bean
     public CoursesClient coursesClient(WebClient.Builder builder) {
-        var client = builder.baseUrl("http://localhost:8083").build();
+        var client = builder.baseUrl("http://localhost:8085").build();
         var factory = HttpServiceProxyFactory.builder(WebClientAdapter.forClient(client)).build();
         return factory.createClient(CoursesClient.class);
     }
