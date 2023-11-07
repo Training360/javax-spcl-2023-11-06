@@ -1,4 +1,4 @@
-package courseservice.coursequery;
+package mentoring.coursequeryservice.coursequery;
 
 import lombok.AllArgsConstructor;
 import org.springframework.web.bind.annotation.GetMapping;

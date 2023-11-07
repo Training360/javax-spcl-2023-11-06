@@ -1,10 +1,9 @@
-package courseservice.coursequery;
+package mentoring.coursequeryservice.coursequery;
 
-import courseservice.events.CourseHasAnnouncedEvent;
 import lombok.AllArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
+import mentoring.coursequeryservice.events.CourseHasAnnouncedEvent;
 import org.springframework.context.event.EventListener;
-import org.springframework.scheduling.annotation.Async;
 import org.springframework.stereotype.Service;
 
 import java.util.List;

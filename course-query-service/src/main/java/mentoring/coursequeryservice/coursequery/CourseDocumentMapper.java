@@ -1,6 +1,6 @@
-package courseservice.coursequery;
+package mentoring.coursequeryservice.coursequery;
 
-import courseservice.events.CourseHasAnnouncedEvent;
+import mentoring.coursequeryservice.events.CourseHasAnnouncedEvent;
 import org.mapstruct.Mapper;
 
 @Mapper(componentModel = "spring")

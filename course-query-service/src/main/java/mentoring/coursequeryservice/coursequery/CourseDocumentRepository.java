@@ -1,4 +1,4 @@
-package courseservice.coursequery;
+package mentoring.coursequeryservice.coursequery;
 
 import org.springframework.data.elasticsearch.annotations.Query;
 import org.springframework.data.elasticsearch.repository.ElasticsearchRepository;

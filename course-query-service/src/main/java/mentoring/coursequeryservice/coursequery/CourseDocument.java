@@ -1,4 +1,4 @@
-package courseservice.coursequery;
+package mentoring.coursequeryservice.coursequery;
 
 import lombok.Data;
 import org.springframework.data.elasticsearch.annotations.Document;
