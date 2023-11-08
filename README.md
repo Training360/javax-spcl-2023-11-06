@@ -42,3 +42,9 @@ docker compose up -d
 ```shell
 docker exec -it kafka-kafka-1 kafka-console-producer.sh --bootstrap-server localhost:9092 --topic uppercase-in-0
 ```
+
+## Career service
+
+```shell
+docker run -d -e POSTGRES_DB=career -e POSTGRES_USER=career -e POSTGRES_PASSWORD=career -p 5435:5432  --name career-postgres postgres
+```
