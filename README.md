@@ -48,3 +48,9 @@ docker exec -it kafka-kafka-1 kafka-console-producer.sh --bootstrap-server local
 ```shell
 docker run -d -e POSTGRES_DB=career -e POSTGRES_USER=career -e POSTGRES_PASSWORD=career -p 5435:5432  --name career-postgres postgres
 ```
+
+## Keycloak
+
+```shell
+docker run -d -e KEYCLOAK_USER=root -e KEYCLOAK_PASSWORD=root -p 8089:8080 --name keycloak jboss/keycloak
+```
