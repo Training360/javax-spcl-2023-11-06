@@ -1,0 +1,7 @@
+POST http://localhost:8084/api/enrollments
+Content-Type: application/json
+
+{
+  "courseId": 1,
+  "employeeId": 1
+}
