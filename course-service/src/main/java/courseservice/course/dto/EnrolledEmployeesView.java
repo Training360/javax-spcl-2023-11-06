@@ -12,4 +12,8 @@ import java.util.List;
 public class EnrolledEmployeesView {
 
     private List<Long> employeeIds;
+
+    public boolean containsEmployee(long employeeId) {
+        return employeeIds.contains(employeeId);
+    }
 }
